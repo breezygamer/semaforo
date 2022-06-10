@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semafaro</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            justify-content: center;
+        }
+        
+    </style>
+    <header>
+        <h1>Semafaro</h1>
+    </header>
+    <main>
+
+        <img src="./img/desligado.png" alt="desligado" id="imagem">
+
+        <div class="buttons">
+            <button id="verde">Verde</button>
+            <button id="amarelo">Amarelo</button>
+            <button id="vermelho">Vermelho</button>
+            <button id="automatico">Automatico</button>
+        </div>
+
+    </main>
+
+    <script>
+
+        let imagem = document.querySelector('#imagem');
+
+        let verde = document.querySelector('#verde');
+        let amarelo = document.querySelector('#amarelo');
+        let vermelho = document.querySelector('#vermelho');
+        let automatico = document.querySelector('#automatico');
+
+        function corverde(){
+            document.querySelector('#imagem').src ="./img/verde.png"
+        }
+
+        function coramarelo(){
+            document.querySelector('#imagem').src ="./img/amarelo.png"
+            console.log("teste")
+        }
+
+        function corvermelho(){
+            document.querySelector('#imagem').src ="./img/vermelho.png"
+        }
+
+        function automatizar(){
+
+            setInterval(coramarelo(), 1000)
+        }
+        verde.addEventListener('click', corverde, false);
+        amarelo.addEventListener('click', coramarelo, false);
+        vermelho.addEventListener('click', corvermelho, false);
+        automatico.addEventListener('click', automatizar, false);
+        
+    </script>
+</body>
+</html>
